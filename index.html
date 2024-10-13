@@ -27,7 +27,6 @@
         let qrcode;
         $('#generate-btn').click(() => {
             let url = $('#qr-input').val();
-            // console.log("asd" + url)
             $('#qr-code').empty();
             qrcode = new QRCode(document.getElementById('qr-code'), {
                 text: url,
