@@ -36,6 +36,20 @@
             })
             console.log(qrcode)
         })
+        
+        $('#download-btn').click(() => {
+            if (!qrcode) {
+                alert('Please generate a QR code first.');
+                return;
+            }
+            let imgSrc = $('#qr-code img').attr('src');
+            let link = document.createElement('a');
+            link.download = 'qrcode.png';
+            link.href = imgSrc;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
     </script>
 </body>
 
